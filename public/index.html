@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>AeroSafe</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">✈ AeroSafe</div>
+
+<ul class="nav-links">
+
+<li><a href="#features">Features</a></li>
+<li><a href="#telemetry">Live Telemetry</a></li>
+<li><a href="#cnn">CNN Model</a></li>
+
+
+
+</ul>
+
+<a href="/logout" class="logout-btn">Logout</a>
+
+</nav>
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="tag">NEXT-GEN FLIGHT SAFETY</div>
+
+<h1>
+Predictive Risk Models for <br>
+<span>Modern Aviation</span>
+</h1>
+
+<p>
+AeroSafe merges real-time meteorological telemetry with advanced
+deep learning models to classify flight risks.
+</p>
+
+<div class="hero-buttons">
+
+<button onclick="scrollTelemetry()" class="primary">
+Live Telemetry
+</button>
+
+<button onclick="goArchitecture()" class="secondary">
+View Architecture
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ARCHITECTURE -->
+
+<section class="architecture" id="features">
+
+<h2>Architecture & Workflow</h2>
+
+<p class="sub">
+Seamless integration of live data streams into deep learning classifiers
+</p>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>1. Data Acquisition</h3>
+
+<p>
+Collect live telemetry including wind speed,
+humidity and atmospheric pressure.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>2. CNN Processing</h3>
+
+<p>
+Pass normalized matrices through neural networks
+to detect weather risk patterns.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>3. Actionable Output</h3>
+
+<p>
+Generate flight safety risk classification
+Low / Medium / High.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- TELEMETRY -->
+
+<section class="telemetry" id="telemetry">
+
+<h2>Meteorological Telemetry</h2>
+
+<p>
+Connect to real-time weather grids to feed the risk engine.
+</p>
+
+<div class="telemetry-box">
+
+<input id="lat" placeholder="Latitude e.g 40.7128">
+
+<input id="lon" placeholder="Longitude e.g -74.0060">
+
+<button onclick="autoLocation()" class="auto">
+Auto
+</button>
+
+<button onclick="analyzeWeather()" class="analyze">
+Analyze
+</button>
+
+</div>
+
+<div id="resultCard" class="result-card">
+
+<h3>Weather Analysis</h3>
+
+<div class="result-grid">
+
+<div class="item">
+<span>Temperature</span>
+<p id="temp">--</p>
+</div>
+
+<div class="item">
+<span>Wind Speed</span>
+<p id="wind">--</p>
+</div>
+
+<div class="item">
+<span>Humidity</span>
+<p id="humidity">--</p>
+</div>
+
+<div class="item">
+<span>Pressure</span>
+<p id="pressure">--</p>
+</div>
+
+</div>
+
+<div class="risk">
+
+Flight Risk Level:
+<span id="riskLevel">--</span>
+
+</div>
+
+
+</div>
+
+</section>
+<section id="cnn">
+
+<div class="cnn-container">
+
+<p class="section-tag">DEEP LEARNING</p>
+
+<h1 class="cnn-title">
+CNN Risk <span>Accuracy Model</span>
+</h1>
+
+<p class="cnn-subtitle">
+Our Convolutional Neural Network learns complex patterns across risk variables
+to deliver highly accurate flight risk predictions.
+</p>
+
+
+<!-- CNN ENGINE CARD -->
+
+<div class="cnn-engine">
+
+<div class="cnn-left">
+
+<h3>🧠 Pattern Recognition Engine</h3>
+
+<p>
+The CNN model processes 6 key risk variables — wind speed, visibility,
+turbulence, precipitation, temperature delta, and cloud ceiling —
+through convolutional layers to detect non-linear risk patterns
+that traditional models miss.
+</p>
+
+</div>
+
+
+<div class="cnn-right">
+
+<span class="cnn-layer">Input</span>
+<span class="cnn-line"></span>
+<span class="cnn-layer">Conv1</span>
+<span class="cnn-line"></span>
+<span class="cnn-layer">Conv2</span>
+<span class="cnn-line"></span>
+<span class="cnn-layer">Dense</span>
+<span class="cnn-line"></span>
+<span class="cnn-layer output">Output</span>
+
+</div>
+
+
+<div class="cnn-button-box">
+
+<button class="cnn-btn" onclick="runCNN()">
+⚡ Run CNN Risk Prediction
+</button>
+
+</div>
+
+</div>
+
+
+<!-- RESULT CARDS -->
+
+<div class="cnn-results">
+
+<div class="cnn-card">
+
+<p>MODEL ACCURACY</p>
+<h2 id="accuracy">--</h2>
+
+</div>
+
+
+<div class="cnn-card danger">
+
+<p>RISK LEVEL</p>
+<h2 id="cnnRiskLevel">--</h2>
+
+</div>
+
+
+<div class="cnn-card">
+
+<p>CONFIDENCE</p>
+<h2 id="confidence">--</h2>
+
+</div>
+
+</div>
+
+
+<!-- ANALYSIS -->
+
+<div class="cnn-analysis">
+
+<h3>Risk Variable Analysis</h3>
+
+<div class="analysis-row">
+<span>Wind Speed</span>
+<div class="bar"><div id="barWind" class="bar-fill"></div></div>
+</div>
+
+<div class="analysis-row">
+<span>Visibility</span>
+<div class="bar"><div id="barVis" class="bar-fill"></div></div>
+</div>
+
+<div class="analysis-row">
+<span>Turbulence Index</span>
+<div class="bar"><div id="barTurb" class="bar-fill"></div></div>
+</div>
+
+<div class="analysis-row">
+<span>Precipitation</span>
+<div class="bar"><div id="barRain" class="bar-fill"></div></div>
+</div>
+
+<div class="analysis-row">
+<span>Temperature Delta</span>
+<div class="bar"><div id="barTemp" class="bar-fill orange"></div></div>
+</div>
+
+<div class="analysis-row">
+<span>Cloud Ceiling</span>
+<div class="bar"><div id="barCloud" class="bar-fill"></div></div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
