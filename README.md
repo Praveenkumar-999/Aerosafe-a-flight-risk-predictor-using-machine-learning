@@ -29,24 +29,24 @@ This project combines data ingestion, ML model training, and a dashboard to help
 
 ## 📦 Setup
 
-1. Clone:
+-1. Clone:
    ```bash
    git clone https://github.com/Praveenkumar-999/Aerosafe-a-flight-risk-predictor-using-machine-learning.git
    cd "aero - Copy - Copy"
-2.python env:
+-2.python env:
    python -m venv aerosafe-env
    .\aerosafe-env\Scripts\activate
   pip install -r requirements.txt
-3.Node:
+-3.Node:
    npm install
-4.start maongodb database:
+-4.start maongodb database:
    install mongodb compass
-5.next steps run in powershell:
+-5.next steps run in powershell:
    mkdir C:\data\db
    mondod
-6.run training model:
+-6.run training model:
    python train_model.py
-7.run model api:
+-7.run model api:
    python cnn_api.py
-8.node createUser.js
-9.node server.js
+-8.node createUser.js
+-9.node server.js
